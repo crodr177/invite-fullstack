@@ -5,6 +5,7 @@ import store from '../store'
 import Invite from './Invite'
 import Going from './Going'
 import NotGoing from './NotGoing'
+import '../styles/base.css'
 
 class App extends Component {
   render() {

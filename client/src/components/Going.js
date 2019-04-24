@@ -11,17 +11,21 @@ class Going extends Component {
   render(){
     return (
       <div>
-        <Link to="/"><button>Back</button></Link>
-        {
-          this.props.goingUsers.map(item =>(
-            <div key={"user - " + item.phone}>
-            <p><img alt="user" src={item.picture.large}/></p>
-            <p>Name: {item.name.first} {item.name.last}</p>
-            <p>Phone: {item.phone}</p>
-            <p>Email: {item.email}</p>
-            </div>
-          ))
-        }
+        <Link to="/"><button className="back-button">&#8249;</button></Link>
+        <div className="going-notgoing-container">
+          {
+            this.props.goingUsers.map(item =>(
+              <div className="invitee-info-2" key={"user - " + item.phone}>
+              <p className="image"><img alt="user" src={item.picture.large}/></p>
+              <div className="bottom-info">
+                <p><span>Name:</span> {item.name.first} {item.name.last}</p>
+                <p><span>Phone:</span> {item.phone}</p>
+                <p><span>Email:</span>  {item.email}</p>
+              </div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     )
   }

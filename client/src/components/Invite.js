@@ -31,15 +31,23 @@ class Invite extends Component {
   }
   render(){
     return (
-      <div>
-        <Link to="/going"><p>Going: {this.props.goingUsers.length} </p></Link>
-        <Link to="/notgoing"><p>Not Going: {this.props.notGoingUsers.length}</p></Link>
-        <p><img alt="user" src={this.props.picture.large}/></p>
-        <p>Name: {this.props.name.first} {this.props.name.last}</p>
-        <p>Phone: {this.props.phone}</p>
-        <p>Email: {this.props.email}</p>
-        <button onClick={this.going}>Going</button>
-        <button onClick={this.notGoing}>Not Going</button>
+      <div id="invite-container">
+        <div id="going-notgoing">
+          <p><Link to="/going">Going: {this.props.goingUsers.length}</Link></p>
+          <p><Link to="/notgoing">Not Going: {this.props.notGoingUsers.length}</Link></p>
+        </div>
+        <div className="invitee-info">
+          <p className="image"><img alt="user" src={this.props.picture.large}/></p>
+          <div className="bottom-info">
+            <p><span>Name:</span> {this.props.name.first} {this.props.name.last}</p>
+            <p><span>Phone:</span> {this.props.phone}</p>
+            <p><span>Email:</span> {this.props.email}</p>
+          </div>
+        </div>
+        <div id="invite-buttons">
+          <button className="going" onClick={this.going}>&#10003;</button>
+          <button className="notgoing" onClick={this.notGoing}>X</button>
+        </div>
       </div>
     )
   }
